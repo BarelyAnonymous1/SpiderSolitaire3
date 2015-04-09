@@ -44,8 +44,8 @@ public class SpiderSolitaire extends ShapeScreen
         for(int i = 0; i < cols.length; i++) {
             cols[i] = new LinkedList<Card>();
         }
-        this.buildDeck();
-        this.moveCard();
+        //this.buildDeck();
+        //this.moveCard();
     }
     /**
      * builds the board
