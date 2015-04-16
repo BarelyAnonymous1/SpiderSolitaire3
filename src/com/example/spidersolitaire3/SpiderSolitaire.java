@@ -44,8 +44,12 @@ public class SpiderSolitaire extends ShapeScreen
         for(int i = 0; i < cols.length; i++) {
             cols[i] = new LinkedList<Card>();
         }
-        //this.buildDeck();
-        //this.moveCard();
+        this.buildDeck();
+        this.moveCard();
+        //this.deal(3);
+
+        //this.setBackgroundColor(Color.blue);
+
     }
     /**
      * builds the board
@@ -73,12 +77,14 @@ public class SpiderSolitaire extends ShapeScreen
      */
     public void deal(int times) {
         for(int i = 0; i < times; i++) {
-            for(int j = 0; j < cols.length; j++) {
+            //for(int j = 0; j < cols.length; j++) {
                 Card holder = deck.pop();
-                cols[j].add(holder);
-                holder.setLeftTop(15, 100);
+                //cols[j].add(holder);
+                holder.remove();
+                holder.setLeftTop(100 * i, 300);
+                holder.setRightBottom(100 * i + 71, 398);
                 this.add(holder);
-            }
+            //}
         }
     }
     // ----------------------------------------------------------
@@ -89,8 +95,7 @@ public class SpiderSolitaire extends ShapeScreen
     {
         Card holder = deck.pop();
         holder.remove();
-        holder.setLeftTop(100, 300);
-        holder.setRightBottom(242, 492);
+        holder.setPosition(500, 200);
         this.add(holder);
     }
     /**
@@ -109,7 +114,7 @@ public class SpiderSolitaire extends ShapeScreen
             suit = num2Char(intSuit);
             if(!checkRepeat(num, suit) && num > 0) {
                 //THE POSTITION VALUES SHOULD ALL BE THE SAME, IN DECK LOCATION
-                Card holder = new Card(0, 0, 142, 192, num, suit);
+                Card holder = new Card(0, 0, 71, 98, num, suit);
                 deck.push(holder);
                 this.add(holder);
                 count++;
