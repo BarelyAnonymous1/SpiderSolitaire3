@@ -23,6 +23,8 @@ import sofia.app.ShapeScreen;
 /**
  *  Logic for the spider solitare game
  *  I'M CHANGING STUFF!!!!
+ *
+ *  anna changed some shit
  *  @author Anna Bosco, Preston Lattimer, Jonathan DeFreeuw
  *  @version Mar 29, 2015
  */
