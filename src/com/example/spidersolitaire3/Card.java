@@ -46,15 +46,14 @@ public class Card extends RectangleShape
     }
     /**
      * Constructor with default suit
-     * @param left - left coord
-     * @param top  - top coord
-     * @param right  - right coord
-     * @param bottom -bottom coord
+     * @param x horizontal coordinate
+     * @param y vertical coordinate
      * @param num - the card number
      */
-    public Card(float left, float top, float right, float bottom, int num) {
+    public Card(float x, float y, int num) {
 
-        super(left, top, right, bottom);
+        super(0, 0, 71, 81);
+        this.setPosition(x, y);
         number = num;
         suit = 's';
     }
