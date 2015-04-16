@@ -97,6 +97,7 @@ public class SpiderSolitaire extends ShapeScreen
         holder.remove();
         holder.setPosition(500, 200);
         this.add(holder);
+        // changint this stuff
     }
     /**
      * creates stack of 104 cards
