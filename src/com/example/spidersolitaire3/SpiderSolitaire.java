@@ -68,7 +68,7 @@ public class SpiderSolitaire extends ShapeScreen
      * reveals the top element of each stack
      */
     public void reveal() {
-        //gui stuff...
+
     }
     /**
      * Deals the cards, one to each linked list
