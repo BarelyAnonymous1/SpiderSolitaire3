@@ -98,7 +98,7 @@ public class Card extends RectangleShape
     }
     /**
      * equals method
-     * @param card to check equality with
+     * @param otherCard to check equality with
      * @return true if the same
      */
     public boolean equals(Card otherCard) {
