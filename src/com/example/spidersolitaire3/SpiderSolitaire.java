@@ -15,14 +15,10 @@ import java.util.Arrays;
 import java.util.Stack;
 import java.util.LinkedList;
 import sofia.app.ShapeScreen;
-
-//preston
-
 /**
  * // -------------------------------------------------------------------------
 /**
  *  Logic for the spider solitare game
- *  I'M CHANGING STUFF!!!!
  *  @author Anna Bosco, Preston Lattimer, Jonathan DeFreeuw
  *  @version Mar 29, 2015
  */
