@@ -1,4 +1,5 @@
 package com.example.spidersolitaire3;
+import sofia.graphics.Color;
 import sofia.graphics.RectangleShape;
 /**
  * // -------------------------------------------------------------------------
@@ -92,7 +93,7 @@ public class Card extends RectangleShape
     public void reveal() {
         isRevealed = true;
         String img = "";
-        img = Character.toString(suit) +  Integer.toString(number) ;
+        img = Integer.toString(number) + Character.toString(suit);
         setImage(img);
     }
 }
