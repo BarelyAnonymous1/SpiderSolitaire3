@@ -1,5 +1,4 @@
 package com.example.spidersolitaire3;
-import sofia.graphics.Color;
 import sofia.graphics.RectangleShape;
 /**
  * // -------------------------------------------------------------------------
@@ -93,15 +92,7 @@ public class Card extends RectangleShape
     public void reveal() {
         isRevealed = true;
         String img = "";
-        img = Integer.toString(number) + Character.toString(suit);
+        img = Character.toString(suit) +  Integer.toString(number) ;
         setImage(img);
-    }
-    /**
-     * equals method
-     * @param otherCard to check equality with
-     * @return true if the same
-     */
-    public boolean equals(Card otherCard) {
-        return (suit == otherCard.getSuit() && number == otherCard.getNumber());
     }
 }
