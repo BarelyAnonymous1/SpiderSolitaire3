@@ -19,12 +19,6 @@ import sofia.app.ShapeScreen;
  * // -------------------------------------------------------------------------
 /**
  *  Logic for the spider solitare game
-<<<<<<< HEAD
-=======
- *  I'M CHANGING STUFF!!!!
- *
- *  anna changed some shit
->>>>>>> origin/master
  *  @author Anna Bosco, Preston Lattimer, Jonathan DeFreeuw
  *  @version Mar 29, 2015
  */
@@ -51,7 +45,7 @@ public class SpiderSolitaire extends ShapeScreen
         }
         this.buildDeck();
         this.moveCard();
-        //this.deal(3);
+        this.deal(1);
 
         //this.setBackgroundColor(Color.blue);
 
@@ -82,14 +76,14 @@ public class SpiderSolitaire extends ShapeScreen
      */
     public void deal(int times) {
         for(int i = 0; i < times; i++) {
-            //for(int j = 0; j < cols.length; j++) {
+            for(int j = 0; j < cols.length; j++) {
                 Card holder = deck.pop();
-                //cols[j].add(holder);
-                holder.remove();
+                cols[j].add(holder);
+                //holder.remove();
                 holder.setLeftTop(100 * i, 300);
                 holder.setRightBottom(100 * i + 71, 398);
                 this.add(holder);
-            //}
+            }
         }
     }
     // ----------------------------------------------------------
@@ -114,18 +108,19 @@ public class SpiderSolitaire extends ShapeScreen
         int intSuit = 0;
         char suit = 'a';
         Random rando = new sofia.util.Random();
-        while(count < 104) {
-            num = rando.nextInt(14);
+        while(count < 52) {
+            num = rando.nextInt(13) + 1;
             intSuit = rando.nextInt(4);
             suit = num2Char(intSuit);
-            if(!checkRepeat(num, suit) && num > 0) {
+            Card holder = new Card(0, 0, 71, 98, num, suit);
+            if(!checkRepeat(num, suit)) {
                 //THE POSTITION VALUES SHOULD ALL BE THE SAME, IN DECK LOCATION
-                Card holder = new Card(0, 0, 71, 98, num, suit);
                 deck.push(holder);
                 this.add(holder);
                 count++;
             }
         }
+        //deck.push(new Card(0, 0, 71, 98, 3, 'c'));
     }
     /**
      * @param num - the number to check
@@ -140,14 +135,10 @@ public class SpiderSolitaire extends ShapeScreen
         while(!tempStack.empty()) {
             temp = tempStack.pop();
             if(temp.getNumber() == num && temp.getSuit() == suit) {
-                ct++;
+                return true;
             }
         }
-        //if there are 8 return false
-        if (ct < 2) {
-            return false;
-        }
-        return true;
+        return false;
     }
     /**
      * translates the num suit into a char
