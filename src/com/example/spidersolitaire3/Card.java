@@ -96,4 +96,12 @@ public class Card extends RectangleShape
         img = Integer.toString(number) + Character.toString(suit);
         setImage(img);
     }
+    /**
+     * equals method
+     * @param card to check equality with
+     * @return true if the same
+     */
+    public boolean equals(Card otherCard) {
+        return (suit == otherCard.getSuit() && number == otherCard.getNumber());
+    }
 }
