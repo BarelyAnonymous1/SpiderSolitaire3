@@ -4,12 +4,6 @@ import sofia.graphics.Color;
 import sofia.app.ShapeScreen;
 
 
-/*SUMMARY OF WHAT I DID:
- * I created the major methods, i think have the logic for buildDeck working
- * My project is being stupid so haven't tested anything yet
- * Also, do we wanna like make an array of linked list instead of having them float around?
- * did not touch the GUI
- */
 import sofia.util.Random;
 import java.util.Arrays;
 import java.util.Stack;
@@ -18,26 +12,36 @@ import sofia.app.ShapeScreen;
 /**
  * // -------------------------------------------------------------------------
 /**
+<<<<<<< HEAD
  *  Logic for the spider solitare game
+=======
+ *  the screen class for spider solitare
+ *
+>>>>>>> origin/master
  *  @author Anna Bosco, Preston Lattimer, Jonathan DeFreeuw
  *  @version Mar 29, 2015
  */
 public class SpiderSolitaire extends ShapeScreen
 {
     /**
-     *
+     * the deck
      */
     private Stack<Card> deck;
     /**
      * Array of Linked List Objects
      */
     private LinkedList<Card> [] cols;
+    /**
+     * boolean for clicking (true when cards are selected)
+     */
+    private boolean clicked;
 
     /**
      * builds the gui
      */
     public void initialize()
     {
+        clicked = false;
         deck = new Stack<Card>();
         cols = new LinkedList[10];
         for(int i = 0; i < cols.length; i++) {
@@ -68,7 +72,7 @@ public class SpiderSolitaire extends ShapeScreen
      * reveals the top element of each stack
      */
     public void reveal() {
-        //gui stuff...
+
     }
     /**
      * Deals the cards, one to each linked list
@@ -121,6 +125,30 @@ public class SpiderSolitaire extends ShapeScreen
             }
         }
         //deck.push(new Card(0, 0, 71, 98, 3, 'c'));
+    }
+    /**
+     * if the user touches the screen
+     * @param x - the x cord
+     * @param y - the y cord
+     */
+    public void onTouchDown(float x, float y) {
+        processTouch(x, y);
+    }
+    /**
+     * if the user swipes across the screen
+     * @param x - the x cord
+     * @param y - the y cord
+     */
+    public void onTouchMove(float x, float y) {
+        processTouch(x, y);
+    }
+    /**
+     * what to do if the screen is touched
+     * @param xx - the x cord
+     * @param yy - the y cord
+     */
+    private void processTouch(float xx, float yy) {
+        //DO SHIT
     }
     /**
      * @param num - the number to check

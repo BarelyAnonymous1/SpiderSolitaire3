@@ -93,7 +93,7 @@ public class Card extends RectangleShape
     public void reveal() {
         isRevealed = true;
         String img = "";
-        img = Integer.toString(number) + Character.toString(suit);
+        img = Character.toString(suit) +  Integer.toString(number) ;
         setImage(img);
     }
 }
